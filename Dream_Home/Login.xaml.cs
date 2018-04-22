@@ -48,8 +48,15 @@ namespace Dream_Home
                             new Window2().Show();
                             this.Close();
                         }
-                   
+
+                        if (username.Equals("Staff"))
+                        {
+                            new Window3().Show();
+                            this.Close();
+                        }
+
                     }
+
                     else
                     {
                         MessageBox.Show("Invalid username/password!");
