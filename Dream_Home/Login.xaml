@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="300">
     <Grid>
-        <Label x:Name="LoginLabelHeader" Content="Dream Home" Margin="34,10,34,0" VerticalAlignment="Top" Height="68" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="LoginLabelHeader" Content="Dream Home" Margin="30,10,31,0" VerticalAlignment="Top" Height="68" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Content="Username&#xD;&#xA;" HorizontalAlignment="Left" Margin="50,110,0,0" VerticalAlignment="Top" Height="29" Width="66"/>
         <TextBox x:Name="LoginTextUsername" HorizontalAlignment="Left" Height="23" Margin="71,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
         <Label Content="Password&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="50,180,0,0" VerticalAlignment="Top" Height="29" Width="66" RenderTransformOrigin="0.523,-0.009"/>

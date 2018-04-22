@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dream_Home"
         mc:Ignorable="d"
-        Title="Director Portal" Height="450" Width="1018">
-    <Grid>
+        Title="Director Portal" Height="482" Width="1018">
+    <Grid Margin="0,0,0,-21">
         <TabControl HorizontalAlignment="Left" Height="365" Margin="30,44,0,0" VerticalAlignment="Top" Width="921" TabStripPlacement="Left" RenderTransformOrigin="0.721,0.497">
 
             <TabItem  Margin="-2,-2,-2,2">
@@ -22,7 +22,7 @@
                         <Label Content="Phone 1:" HorizontalAlignment="Left" Height="23" Margin="471,237,0,0" VerticalAlignment="Top" Width="59" RenderTransformOrigin="0.486,1.861"/>
                         <TextBox HorizontalAlignment="Left" Height="23" Margin="548,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.489,2.015"/>
                         <Button Content="Update" HorizontalAlignment="Left" Height="30" Margin="778,313,0,0" VerticalAlignment="Top" Width="55"/>
-                        <Button Content="Delete" HorizontalAlignment="Left" Height="30" Margin="658,313,0,0" VerticalAlignment="Top" Width="61"/>
+                        <Button Content="Delete" HorizontalAlignment="Left" Height="30" Margin="658,312,0,0" VerticalAlignment="Top" Width="61"/>
                         <Button Content="Add" HorizontalAlignment="Left" Height="29" Margin="548,313,0,0" VerticalAlignment="Top" Width="62"/>
                         <Label Content="ID:" HorizontalAlignment="Left" Height="26" Margin="471,22,0,0" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.654,0.538"/>
                         <TextBox HorizontalAlignment="Left" Height="21" Margin="548,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.52,0.524"/>
