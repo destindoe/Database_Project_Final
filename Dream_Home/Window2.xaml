@@ -49,7 +49,7 @@
             </TabItem>
             <TabItem >
                 <TabItem.Header>
-                    <Image Width="50" Source="C:\Users\desti\Desktop\DreamHomeUpdate\DB-Dream_Home-master\Dream_Home\Images\client.png" Height="59"/>
+                    <Image Width="50" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\client.png" Height="59"/>
                 </TabItem.Header>
                 <Grid Background="#FFE5E5E5" Margin="-4,0,0,-3" Height="362" VerticalAlignment="Top">
                     <DataGrid HorizontalAlignment="Left" Height="243" Margin="2,26,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="5" Grid.RowSpan="3" Grid.Column="1"/>
