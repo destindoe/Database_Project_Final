@@ -22,7 +22,7 @@ namespace Dream_Home
     public partial class Window3 : Window
     {
         //Grab connection
-        SqlConnection connection = ConnectionManager.Open(ConnectionStrings.Destin);
+        SqlConnection connection = ConnectionManager.Open(ConnectionStrings.Jonathan);
 
         public Window3()
         {
@@ -868,16 +868,6 @@ namespace Dream_Home
                 DisplayMortgage();
             }
         }
-
-        
-
-
-
-
-
-
-
-
         //MORTGAGE TAB END
     }
 }

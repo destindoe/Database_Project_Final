@@ -23,7 +23,7 @@ namespace Dream_Home
     public partial class Window2 : Window
     {
         //Grab connection
-        SqlConnection connection = ConnectionManager.Open(ConnectionStrings.Destin);
+        SqlConnection connection = ConnectionManager.Open(ConnectionStrings.Jonathan);
         public Window2()
         {
             InitializeComponent();
