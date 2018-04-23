@@ -59,6 +59,18 @@
                                     <Label Content="Salary:" Height="24" Margin="370,165,339,0" VerticalAlignment="Top" Grid.Column="4"/>
                                     <TextBox x:Name="StaffSalary" HorizontalAlignment="Left" Height="20" Margin="456,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.1" Grid.Column="4"/>
                                     <DatePicker x:Name="StaffDOB" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="4" Margin="637,110,0,0" Width="104" Height="23"/>
+                                    <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="174,263,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.654,0.538" Grid.Column="4"/>
+                                    <ComboBox x:Name="SCombo" HorizontalAlignment="Left" Margin="20,267,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="5">
+                                        <ComboBoxItem Content="StaffNo" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="FirstName" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="LastName" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="Position" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="Sex" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="DateOfBirth" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="Salary" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="BranchNo" HorizontalAlignment="Left" Width="243.2"/>
+                                    </ComboBox>
+                                    <Button x:Name="SShowBtn" Content="Show" Grid.Column="4" HorizontalAlignment="Left" Margin="261,226,0,0" VerticalAlignment="Top" Width="75" Click="SShowBtn_Click"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Agents" Margin="0,0,-18,-2" HorizontalAlignment="Right" Width="53">
@@ -86,7 +98,6 @@
                                             </DataGridTemplateColumn>
                                         </DataGrid.Columns>
                                     </DataGrid>
-                                    <Image HorizontalAlignment="Left" Height="125" Margin="271,15,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\MichaelScott.png" Grid.Column="6"/>
                                     <Label Content="First Name:" HorizontalAlignment="Left" Height="29" Margin="397,38,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.762,1.831" Grid.Column="6"/>
                                     <TextBox x:Name="AgentName" HorizontalAlignment="Left" Height="21" Margin="473,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285"  RenderTransformOrigin="0.481,0.524" Grid.Column="6"/>
                                     <Label Content="Phone #:" HorizontalAlignment="Left" Height="23" Margin="538,125,0,0" VerticalAlignment="Top" Width="59" RenderTransformOrigin="0.486,1.861" Grid.Column="6"/>
@@ -104,6 +115,17 @@
                                     <Label Content="Staff #:" HorizontalAlignment="Left" Height="23" Margin="396,125,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.486,1.861" Grid.Column="6"/>
                                     <TextBox x:Name="AgentStaffNo" HorizontalAlignment="Left" Height="23" Margin="473,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.489,2.015" Grid.Column="6"/>
                                     <Button x:Name="AgentAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="568,247,0,0" VerticalAlignment="Top" Width="72" Grid.Column="6" Click="AgentAddbtn_Click"/>
+                                    <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="192,263,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.654,0.538" Grid.Column="6"/>
+                                    <ComboBox x:Name="ACombo" HorizontalAlignment="Left" Margin="5,268,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="6" Grid.Column="1">
+                                        <ComboBoxItem Content="FirstName" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="LastName" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="AgentID" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="TelephoneNumber" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="BranchNo" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="Company" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="StaffNo" HorizontalAlignment="Left" Width="243.2"/>
+                                    </ComboBox>
+                                    <Button x:Name="AShow_Btn" Content="Show" Grid.Column="6" HorizontalAlignment="Left" Margin="279,226,0,0" VerticalAlignment="Top" Width="75" Click="AShowBtn_Click"/>
                                 </Grid>
                             </TabItem>
                         </TabControl>
@@ -129,9 +151,8 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <TextBox x:Name="ClientSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="1.2,161,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
-                    <Button x:Name="ClientSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="109,161,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" Click="ClientSearchbtn_Click"/>
-                    <Image HorizontalAlignment="Left" Height="125" Margin="24,30,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="5" Grid.RowSpan="3"/>
+                    <TextBox x:Name="ClientSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="1,173,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
+                    <Button x:Name="ClientSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="109,173,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" Click="ClientSearchbtn_Click"/>
                     <Label Content="First Name:" HorizontalAlignment="Left" Margin="146.2,8.2,0,58" Width="70" RenderTransformOrigin="0.762,1.831" Grid.Column="5" Grid.Row="1"/>
                     <Label Content="Phone #:" HorizontalAlignment="Left" Height="32" Margin="146.2,65.2,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.486,1.861" Grid.Column="5" Grid.Row="1" Grid.RowSpan="2"/>
                     <Label Content="Client #:" HorizontalAlignment="Left" Height="26" Margin="145,22,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.654,0.538" Grid.Column="5" Grid.RowSpan="2"/>
@@ -143,6 +164,15 @@
                     <Label Content="Max Rent:" Grid.Column="5" HorizontalAlignment="Left" Height="26" Margin="335.2,22,0,0" VerticalAlignment="Top" Width="70" Grid.RowSpan="2"/>
                     <TextBox x:Name="ClientPhone" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Margin="220.2,65.2,0,0" Grid.Column="5" Grid.Row="1"/>
                     <Button x:Name="ClientAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="330.2,107,0,0" VerticalAlignment="Top" Width="72" Grid.Column="5" Grid.Row="2" Click="ClientAddbtn_Click"/>
+                    <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="109,139,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.654,0.538" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2"/>
+                    <ComboBox x:Name="CCombo" HorizontalAlignment="Left" Margin="1,144,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="2">
+                        <ComboBoxItem Content="ClientNo" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="FirstName" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="LastName" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="TelNo" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="MaxRent" HorizontalAlignment="Left" Width="243.2"/>
+                    </ComboBox>
+                    <Button x:Name="CShow_Btn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="27,102,0,0" VerticalAlignment="Top" Width="75" Click="CShowBtn_Click" Grid.Row="2"/>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="45"/>
                         <RowDefinition Height="95*"/>
@@ -190,9 +220,8 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <TextBox x:Name="OwnerSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="2,180,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
-                    <Button x:Name="OwnerSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="107.2,180,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" Click="OwnerSearchbtn_Click"/>
-                    <Image HorizontalAlignment="Left" Height="125" Margin="25,30,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="5" Grid.RowSpan="3"/>
+                    <TextBox x:Name="OwnerSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="2,201,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
+                    <Button x:Name="OwnerSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="116,201,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" Click="OwnerSearchbtn_Click"/>
                     <Label Content="First Name:" HorizontalAlignment="Left" Height="29" Margin="145.6,8.2,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.762,1.831" Grid.Column="5" Grid.Row="1"/>
                     <Label Content="Phone #:" HorizontalAlignment="Left" Height="28" Margin="145.6,59.2,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.486,1.861" Grid.Column="5" Grid.Row="1" Grid.RowSpan="2"/>
                     <Label Content="Owner #:" HorizontalAlignment="Left" Height="26" Margin="145,22,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.654,0.538" Grid.Column="5" Grid.RowSpan="2"/>
@@ -207,6 +236,16 @@
                     <Label Content="Branch #:" HorizontalAlignment="Left" Height="26" Margin="339.6,22,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.654,0.538" Grid.Column="5" Grid.RowSpan="2"/>
                     <TextBox x:Name="OwnerBranch" HorizontalAlignment="Left" Height="21" Margin="398.6,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" RenderTransformOrigin="0.52,0.524" Grid.Column="5" Grid.RowSpan="2"/>
                     <Button x:Name="OwnerAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="328.6,131,0,0" VerticalAlignment="Top" Width="72" Grid.Column="5" Grid.Row="2" Click="OwnerAddbtn_Click"/>
+                    <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="107,174,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.713,-0.346" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2"/>
+                    <ComboBox x:Name="OCombo" HorizontalAlignment="Left" Margin="2,175,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="2">
+                        <ComboBoxItem Content="OwnerNo" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="FName" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="LName" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="TeloNo" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="BranchNo" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="Address" HorizontalAlignment="Left" Width="243.2"/>
+                    </ComboBox>
+                    <Button x:Name="OShowBtn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="24.6,134,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="OShowBtn_Click"/>
                 </Grid>
             </TabItem>
             <TabItem  Margin="-2,-2,-2,2">
@@ -240,10 +279,22 @@
                             <ColumnDefinition Width="67*"/>
                             <ColumnDefinition Width="209*"/>
                         </Grid.ColumnDefinitions>
-                        <DataGrid x:Name="ForSaleDataGrid" HorizontalAlignment="Left" Height="243" Margin="6,26,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="5" Grid.RowSpan="3" Grid.Column="1"/>
-                        <TextBox x:Name="FSSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="9.2,191,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
-                        <Button x:Name="FSSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="116.8,191,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" RenderTransformOrigin="0.488,0.505"/>
-                        <Image HorizontalAlignment="Left" Height="125" Margin="29,30,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="5" Grid.RowSpan="3"/>
+                        <DataGrid x:Name="ForSaleDataGrid" HorizontalAlignment="Left" Height="243" Margin="6,26,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="5" Grid.RowSpan="3" Grid.Column="1" SelectionChanged="ForSaleDataGrid_SelectionChanged">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button x:Name="FSDelete" Content ="Delete" Click="FSDelete_Click" />
+                                                <Button x:Name="FSUpdate" Content="Update" Click="FSUpdate_Click" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <TextBox x:Name="FSSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="1,203,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
+                        <Button x:Name="FSSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="110,203,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" RenderTransformOrigin="0.488,0.505" Click="FSSearchbtn_Click"/>
                         <Label Content="Street:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="159.8,27,0,0" Grid.Column="5" Grid.RowSpan="2"/>
                         <TextBox x:Name="FSStreet" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Margin="236.8,28,0,0" Grid.Column="5" Grid.RowSpan="2"/>
                         <TextBox x:Name="FSCity" HorizontalAlignment="Left" Height="26" Margin="236.8,13.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Grid.Column="5" Grid.Row="1"/>
@@ -251,24 +302,37 @@
                         <Label Content="State:" VerticalAlignment="Top" Margin="355.8,13.2,122.4,0" Grid.Column="5" Grid.Row="1"/>
                         <Label Content="Post Code:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="159.8,44.2,0,0" Grid.Column="5" Grid.Row="1"/>
                         <TextBox x:Name="FSPost" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Margin="236.8,46.2,0,0" Grid.Column="5" Grid.Row="1"/>
-                        <TextBox HorizontalAlignment="Left" Height="23" Margin="236.8,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Grid.Column="5" Grid.Row="2" RenderTransformOrigin="0.495,0.452"/>
-                        <Label Content="Rooms:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="159.8,59,0,0" Grid.Column="5" Grid.Row="2"/>
+                        <TextBox x:Name="FSRooms" HorizontalAlignment="Left" Height="23" Margin="237,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Grid.Column="5" Grid.Row="2" RenderTransformOrigin="0.495,0.452"/>
+                        <Label Content="Rooms:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,32,0,0" Grid.Column="5" Grid.Row="2"/>
                         <Label Content="Type ID:" VerticalAlignment="Top" Margin="355.8,46.2,115.4,0" Grid.Column="5" Grid.Row="1" Grid.RowSpan="2"/>
                         <TextBox x:Name="FSState" HorizontalAlignment="Left" Height="26" Margin="407.8,13.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Grid.Column="5" Grid.Row="1"/>
                         <TextBox x:Name="FSType" HorizontalAlignment="Left" Height="23" Margin="407.8,46.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Grid.Column="5" Grid.Row="1"/>
-                        <TextBox x:Name="FSAppraisial" HorizontalAlignment="Left" Height="23" Margin="236.8,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Grid.Column="5" Grid.Row="2"/>
-                        <Label Content="Appraisal:" VerticalAlignment="Top" Margin="159.8,3,300.4,0" Grid.Column="5" Grid.Row="2"/>
-                        <Label Content="Viewing Agent ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="159.8,85,0,0" Grid.Column="5" Grid.Row="2" Width="107"/>
-                        <Label Content="Listing Agent ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344.8,62,0,0" Grid.Column="5" Grid.Row="2"/>
-                        <TextBox x:Name="FSLAgent" HorizontalAlignment="Left" Height="23" Margin="449.8,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" Grid.Column="5" Grid.Row="2"/>
-                        <Label Content="Closing Agent ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344.8,88,0,0" Grid.Column="5" Grid.Row="2"/>
-                        <TextBox x:Name="FSCAgent" HorizontalAlignment="Left" Height="23" Margin="448.8,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" Grid.Column="5" Grid.Row="2"/>
-                        <TextBox x:Name="FSVAgent" HorizontalAlignment="Left" Height="23" Margin="267.8,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Grid.Column="5" Grid.Row="2"/>
-                        <TextBox x:Name="FSPropertyNo" HorizontalAlignment="Left" Height="23" Margin="236.8,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Grid.Column="5" Grid.Row="2" RenderTransformOrigin="0.495,0.452"/>
-                        <TextBox x:Name="FSOwnerNo" HorizontalAlignment="Left" Height="23" Margin="417.8,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Grid.Column="5" Grid.Row="2" RenderTransformOrigin="0.495,0.452"/>
-                        <Label Content="Property #:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="159.8,34,0,0" Grid.Column="5" Grid.Row="2"/>
-                        <Label Content="Owner #:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346.8,34,0,0" Grid.Column="5" Grid.Row="2"/>
-                        <Button x:Name="FSAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="328.8,155,0,0" VerticalAlignment="Top" Width="72" Grid.Column="5" Grid.Row="2"/>
+                        <Label Content="Viewing Agent ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,58,0,0" Grid.Column="5" Grid.Row="2" Width="107"/>
+                        <Label Content="Listing Agent ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="345,35,0,0" Grid.Column="5" Grid.Row="2"/>
+                        <TextBox x:Name="FSLAgent" HorizontalAlignment="Left" Height="23" Margin="450,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" Grid.Column="5" Grid.Row="2"/>
+                        <Label Content="Closing Agent ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="345,61,0,0" Grid.Column="5" Grid.Row="2"/>
+                        <TextBox x:Name="FSCAgent" HorizontalAlignment="Left" Height="23" Margin="449,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" Grid.Column="5" Grid.Row="2"/>
+                        <TextBox x:Name="FSVAgent" HorizontalAlignment="Left" Height="23" Margin="268,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Grid.Column="5" Grid.Row="2"/>
+                        <TextBox x:Name="FSPropertyNo" HorizontalAlignment="Left" Height="23" Margin="237,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Grid.Column="5" Grid.Row="2" RenderTransformOrigin="0.495,0.452"/>
+                        <TextBox x:Name="FSOwnerNo" HorizontalAlignment="Left" Height="23" Margin="418,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Grid.Column="5" Grid.Row="2" RenderTransformOrigin="0.495,0.452"/>
+                        <Label Content="Property #:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,7,0,0" Grid.Column="5" Grid.Row="2"/>
+                        <Label Content="Owner #:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="347,7,0,0" Grid.Column="5" Grid.Row="2"/>
+                        <Button x:Name="FSAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="328.8,155,0,0" VerticalAlignment="Top" Width="72" Grid.Column="5" Grid.Row="2" Click="FSAddbtn_Click"/>
+                        <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="109.2,171,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.654,0.538" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2"/>
+                        <ComboBox x:Name="SaleCombo" HorizontalAlignment="Left" Margin="2,175,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="2">
+                            <ComboBoxItem Content="PropertyNo" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="Street" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="City" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="PostCode" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="TypeID" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="Rooms" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="OwnerNo" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="State" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="ClosingAgentID" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="ViewAgentID" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="ListingAgentID" HorizontalAlignment="Left" Width="243.2"/>
+                        </ComboBox>
+                        <Button x:Name="SaleShowBtn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="27.6,134,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="SaleShowBtn_Click"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -303,10 +367,22 @@
                             <ColumnDefinition Width="67*"/>
                             <ColumnDefinition Width="209*"/>
                         </Grid.ColumnDefinitions>
-                        <DataGrid x:Name="ForRentDataGrid" HorizontalAlignment="Left" Height="243" Margin="6,26,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="5" Grid.RowSpan="3" Grid.Column="1"/>
-                        <TextBox x:Name="FRSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="5.2,183,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
-                        <Button x:Name="FRSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="113.8,183,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2"/>
-                        <Image HorizontalAlignment="Left" Height="125" Margin="29,30,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="5" Grid.RowSpan="3"/>
+                        <DataGrid x:Name="ForRentDataGrid" HorizontalAlignment="Left" Height="243" Margin="6,26,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="5" Grid.RowSpan="3" Grid.Column="1" SelectionChanged="ForRentDataGrid_SelectionChanged">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button x:Name="FRDelete" Content ="Delete" Click="FRDelete_Click" />
+                                                <Button x:Name="FRUpdate" Content="Update" Click="FRUpdate_Click" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <TextBox x:Name="FRSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="2,204,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
+                        <Button x:Name="FRSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="111,204,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" Click="FRSearchbtn_Click"/>
                         <Label Content="Street:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="159.8,24,0,0" Grid.Column="5" Grid.RowSpan="2"/>
                         <TextBox x:Name="FRStreet" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Margin="236.8,25,0,0" Grid.Column="5" Grid.RowSpan="2"/>
                         <TextBox x:Name="FRCity" HorizontalAlignment="Left" Height="26" Margin="236.8,10.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Grid.Column="5" Grid.Row="1"/>
@@ -325,7 +401,20 @@
                         <TextBox x:Name="FROwner" HorizontalAlignment="Left" Height="26" Margin="416.8,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" Grid.Column="5" Grid.Row="2"/>
                         <Label Content="Property #:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="159.8,31,0,0" Grid.Column="5" Grid.Row="2"/>
                         <Label Content="Owner #:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="356.8,32,0,0" Grid.Column="5" Grid.Row="2"/>
-                        <Button x:Name="FRAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="330.8,139,0,0" VerticalAlignment="Top" Width="72" Grid.Column="5" Grid.Row="2"/>
+                        <Button x:Name="FRAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="330.8,139,0,0" VerticalAlignment="Top" Width="72" Grid.Column="5" Grid.Row="2" Click="FRAddbtn_Click"/>
+                        <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="109.2,171,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.654,0.538" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2"/>
+                        <ComboBox x:Name="RCombo" HorizontalAlignment="Left" Margin="2,175,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="2">
+                            <ComboBoxItem Content="PropertyNo" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="Street" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="City" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="PostCode" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="TypeID" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="Rooms" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="OwnerNo" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="State" HorizontalAlignment="Left" Width="243.2"/>
+                            <ComboBoxItem Content="Rent" HorizontalAlignment="Left" Width="243.2"/>
+                        </ComboBox>
+                        <Button x:Name="RShowBtn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="27.6,134,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="RShowBtn_Click"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -365,24 +454,47 @@
                                 <Grid Background="#FFE5E5E5" Margin="0,-3,-5,0" HorizontalAlignment="Right" Width="857" Height="328" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="39*"/>
-                                        <ColumnDefinition Width="88*"/>
+                                        <ColumnDefinition Width="78*"/>
+                                        <ColumnDefinition Width="10*"/>
                                         <ColumnDefinition Width="730*"/>
                                     </Grid.ColumnDefinitions>
-                                    <DataGrid x:Name="NewspaperDataGrid" HorizontalAlignment="Left" Height="243" Margin="18,10,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="3"/>
-                                    <TextBox x:Name="NSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="18,299,0,0" Grid.ColumnSpan="3"/>
-                                    <Button x:Name="NSearch1" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="142,299,0,0" Height="19" Grid.Column="2"/>
-                                    <Image HorizontalAlignment="Left" Height="125" Margin="224,16,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="2"/>
-                                    <Label Content="Advertisement ID:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="352,10,0,0" Grid.Column="2"/>
-                                    <TextBox x:Name="NAdID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Margin="460.8,11,0,0" Grid.Column="2"/>
-                                    <Label Content="Property #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="528.8,11,0,0" Grid.Column="2"/>
-                                    <TextBox x:Name="NProperty" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Margin="602.8,11,0,0" Grid.Column="2"/>
-                                    <Label Content="Newspaper Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="351.8,41,0,0" Grid.Column="2"/>
-                                    <TextBox x:Name="NName" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="460.8,41,0,0" Grid.Column="2"/>
-                                    <Label Content="Phone #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="351.8,73,0,0" Grid.Column="2"/>
-                                    <TextBox x:Name="NPhone" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="460.8,72,0,0" Grid.Column="2"/>
-                                    <TextBox x:Name="NContact" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="460.8,102,0,0" Grid.Column="2"/>
-                                    <Label Content="Contact Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="351.8,101,0,0" Grid.Column="2"/>
-                                    <Button x:Name="NAdd" Content="Add" HorizontalAlignment="Left" Height="41" Margin="528.8,228,0,0" VerticalAlignment="Top" Width="72" Grid.Column="2"/>
+                                    <DataGrid x:Name="NewspaperDataGrid" HorizontalAlignment="Left" Height="243" Margin="18,10,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="4" SelectionChanged="NewspaperDataGrid_SelectionChanged">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Button x:Name="NDelete" Content ="Delete" Click="NDelete_Click" />
+                                                            <Button x:Name="NUpdate" Content="Update" Click="NUpdate_Click" />
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <TextBox x:Name="NSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="18,299,0,0" Grid.ColumnSpan="4"/>
+                                    <Button x:Name="NSearch1" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="142,299,0,0" Height="19" Grid.Column="3" Click="NSearch1_Click"/>
+                                    <Image HorizontalAlignment="Left" Height="125" Margin="224,16,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="3"/>
+                                    <Label Content="Advertisement ID:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="352,10,0,0" Grid.Column="3"/>
+                                    <TextBox x:Name="NAdID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Margin="461,11,0,0" Grid.Column="3"/>
+                                    <Label Content="Property #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="529,11,0,0" Grid.Column="3"/>
+                                    <TextBox x:Name="NProperty" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Margin="603,11,0,0" Grid.Column="3"/>
+                                    <Label Content="Newspaper Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="352,41,0,0" Grid.Column="3"/>
+                                    <TextBox x:Name="NName" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="461,41,0,0" Grid.Column="3"/>
+                                    <Label Content="Phone #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="352,73,0,0" Grid.Column="3"/>
+                                    <TextBox x:Name="NPhone" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="461,72,0,0" Grid.Column="3"/>
+                                    <TextBox x:Name="NContact" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="461,102,0,0" Grid.Column="3"/>
+                                    <Label Content="Contact Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="352,101,0,0" Grid.Column="3"/>
+                                    <Button x:Name="NAdd" Content="Add" HorizontalAlignment="Left" Height="41" Margin="529,228,0,0" VerticalAlignment="Top" Width="72" Grid.Column="3" Click="NAdd_Click"/>
+                                    <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="140,263,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.654,0.538" Grid.Column="3"/>
+                                    <ComboBox x:Name="NewsCombo" HorizontalAlignment="Left" Margin="17,267,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="4">
+                                        <ComboBoxItem Content="NewspaperName" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="TelNo" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="ContactName" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="AdvertisementID" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="PropertyNo" HorizontalAlignment="Left" Width="243.2"/>
+                                    </ComboBox>
+                                    <Button x:Name="NewsShowBtn" Content="Show" Grid.Column="3" HorizontalAlignment="Left" Margin="227,226,0,0" VerticalAlignment="Top" Width="75" Click="NewsShowBtn_Click"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="TV" RenderTransformOrigin="2.049,0.651" HorizontalAlignment="Left" Margin="7.4,0,-7.6,0" Width="57" Height="24" VerticalAlignment="Bottom">
@@ -392,9 +504,22 @@
                                         <ColumnDefinition Width="142*"/>
                                         <ColumnDefinition Width="680*"/>
                                     </Grid.ColumnDefinitions>
-                                    <DataGrid x:Name="TVDataGrid" HorizontalAlignment="Left" Height="243" Margin="18,10,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="3"/>
+                                    <DataGrid x:Name="TVDataGrid" HorizontalAlignment="Left" Height="243" Margin="18,10,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="3" SelectionChanged="TVDataGrid_SelectionChanged">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Button x:Name="TVDelete" Content ="Delete" Click="TVDelete_Click" />
+                                                            <Button x:Name="TVUpdate" Content="Update" Click="TVUpdate_Click" />
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                     <TextBox x:Name="TVSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="18,299,0,0" Grid.ColumnSpan="3"/>
-                                    <Button x:Name="TVSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="94,299,0,0" Height="19" Grid.Column="2"/>
+                                    <Button x:Name="TVSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="94,299,0,0" Height="19" Grid.Column="2" Click="TVSearchbtn_Click"/>
                                     <Image HorizontalAlignment="Left" Height="125" Margin="176,16,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="2"/>
                                     <Label Content="Advertisement ID:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="304,10,0,0" Grid.Column="2"/>
                                     <TextBox x:Name="TVAdID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Margin="413,11,0,0" Grid.Column="2"/>
@@ -406,30 +531,61 @@
                                     <TextBox x:Name="TVContactNo" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="413,71,0,0" Grid.Column="2"/>
                                     <TextBox x:Name="TVContactName" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="413,101,0,0" Grid.Column="2"/>
                                     <Label Content="Contact Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="304,100,0,0" Grid.Column="2"/>
-                                    <Button x:Name="TVAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="481,212,0,0" VerticalAlignment="Top" Width="72" Grid.Column="2"/>
+                                    <Button x:Name="TVAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="481,212,0,0" VerticalAlignment="Top" Width="72" Grid.Column="2" Click="TVAddbtn_Click"/>
+                                    <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="92,263,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.654,0.538" Grid.Column="2"/>
+                                    <ComboBox x:Name="TVCombo" HorizontalAlignment="Left" Margin="17,267,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="3">
+                                        <ComboBoxItem Content="TVStation" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="ContactNumber" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="ContactName" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="AdvertisementID" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="PropertyNo" HorizontalAlignment="Left" Width="243.2"/>
+                                    </ComboBox>
+                                    <Button x:Name="TVShowBtn" Content="Show" Grid.Column="2" HorizontalAlignment="Left" Margin="179,226,0,0" VerticalAlignment="Top" Width="75" Click="TVShowBtn_Click"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Internet" RenderTransformOrigin="2.049,0.651" HorizontalAlignment="Left" Margin="7.4,0,-7.6,0" Width="57" Height="24" VerticalAlignment="Bottom">
                                 <Grid Background="#FFE5E5E5" Margin="0,-3,-25,3" HorizontalAlignment="Left" Width="877">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="11*"/>
-                                        <ColumnDefinition Width="273*"/>
+                                        <ColumnDefinition Width="34*"/>
+                                        <ColumnDefinition Width="68*"/>
+                                        <ColumnDefinition Width="775*"/>
                                     </Grid.ColumnDefinitions>
-                                    <DataGrid x:Name="IDataGrid" HorizontalAlignment="Left" Height="243" Margin="18,10,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="2"/>
-                                    <TextBox x:Name="ISearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="18,299,0,0" Grid.ColumnSpan="2"/>
-                                    <Button x:Name="ISearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="235.8,299,0,0" Height="19" Grid.Column="1"/>
-                                    <Image HorizontalAlignment="Left" Height="125" Margin="317.8,16,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="1"/>
-                                    <Label Content="Advertisement ID:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="445.6,10,0,0" Grid.Column="1"/>
-                                    <TextBox x:Name="IAdID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Margin="554.4,11,0,0" Grid.Column="1"/>
-                                    <Label Content="Property #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="622.4,11,0,0" Grid.Column="1"/>
-                                    <TextBox x:Name="IProperty" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Margin="696.4,11,0,0" Grid.Column="1"/>
-                                    <Label Content="Website Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="445.4,41,0,0" Grid.Column="1"/>
-                                    <TextBox x:Name="IWebsite" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="554.4,41,0,0" Grid.Column="1"/>
-                                    <Label Content="Contact #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="445.4,70,0,0" Grid.Column="1"/>
-                                    <TextBox x:Name="IContactNo" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="554.4,71,0,0" Grid.Column="1"/>
-                                    <TextBox x:Name="IContactName" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="554.4,101,0,0" Grid.Column="1"/>
-                                    <Label Content="Contact Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="445.4,100,0,0" Grid.Column="1"/>
-                                    <Button x:Name="IAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="622.4,212,0,0" VerticalAlignment="Top" Width="72" Grid.Column="1"/>
+                                    <DataGrid x:Name="IDataGrid" HorizontalAlignment="Left" Height="243" Margin="18,10,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="3" SelectionChanged="IDataGrid_SelectionChanged">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Button x:Name="IDelete" Content ="Delete" Click="IDelete_Click" />
+                                                            <Button x:Name="IUpdate" Content="Update" Click="IUpdate_Click" />
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <TextBox x:Name="ISearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="18,299,0,0" Grid.ColumnSpan="3"/>
+                                    <Button x:Name="ISearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="168,299,0,0" Height="19" Grid.Column="2" Click="ISearchbtn_Click"/>
+                                    <Label Content="Advertisement ID:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="378,10,0,0" Grid.Column="2"/>
+                                    <TextBox x:Name="IAdID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Margin="486,11,0,0" Grid.Column="2"/>
+                                    <Label Content="Property #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="554,11,0,0" Grid.Column="2"/>
+                                    <TextBox x:Name="IProperty" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Margin="628,11,0,0" Grid.Column="2"/>
+                                    <Label Content="Website Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="377,41,0,0" Grid.Column="2"/>
+                                    <TextBox x:Name="IWebsite" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="486,41,0,0" Grid.Column="2"/>
+                                    <Label Content="Contact #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="377,70,0,0" Grid.Column="2"/>
+                                    <TextBox x:Name="IContactNo" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="486,71,0,0" Grid.Column="2"/>
+                                    <TextBox x:Name="IContactName" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Margin="486,101,0,0" Grid.Column="2"/>
+                                    <Label Content="Contact Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="377,100,0,0" Grid.Column="2"/>
+                                    <Button x:Name="IAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="554,212,0,0" VerticalAlignment="Top" Width="72" Grid.Column="2" Click="IAddbtn_Click"/>
+                                    <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="165,263,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.654,0.538" Grid.Column="2"/>
+                                    <ComboBox x:Name="ICombo" HorizontalAlignment="Left" Margin="17,267,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="3">
+                                        <ComboBoxItem Content="WebsiteName" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="ContactNumber" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="ContactName" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="AdvertisementID" HorizontalAlignment="Left" Width="243.2"/>
+                                        <ComboBoxItem Content="PropertyNo" HorizontalAlignment="Left" Width="243.2"/>
+                                    </ComboBox>
+                                    <Button x:Name="IShowBtn" Content="Show" Grid.Column="2" HorizontalAlignment="Left" Margin="252,226,0,0" VerticalAlignment="Top" Width="75" Click="IShowBtn_Click"/>
                                 </Grid>
                             </TabItem>
                         </TabControl>
@@ -455,9 +611,8 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <TextBox HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="1.2,161,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
-                    <Button x:Name="BranchSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="109,161,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" AutomationProperties.Name="staffSearchbtn" Click="BranchSearchbtn_Click"/>
-                    <Image HorizontalAlignment="Left" Height="125" Margin="24,30,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="5" Grid.RowSpan="3"/>
+                    <TextBox x:Name="BSearch" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="4,173,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
+                    <Button x:Name="BranchSearchbtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="112,173,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" AutomationProperties.Name="staffSearchbtn" Click="BranchSearchbtn_Click"/>
                     <Label Content="Branch #:" HorizontalAlignment="Left" Height="26" Margin="145,22,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.654,0.538" Grid.Column="5" Grid.RowSpan="2"/>
                     <TextBox x:Name="BBranch" HorizontalAlignment="Left" Height="21" Margin="221.2,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.52,0.524" Grid.Column="5" Grid.RowSpan="2"/>
                     <Button x:Name="BAddbtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="328.2,88,0,0" VerticalAlignment="Top" Width="72" Grid.Column="5" Grid.Row="2" Click="BAddbtn_Click"/>
@@ -471,6 +626,16 @@
                     <TextBox x:Name="BState" HorizontalAlignment="Left" Height="21" Margin="385.2,36.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.52,0.524" Grid.Column="5" Grid.Row="1"/>
                     <Label Content="Post Code:" HorizontalAlignment="Left" Height="26" Margin="145.2,59.2,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.482,0.554" Grid.Column="5" Grid.Row="1"/>
                     <TextBox x:Name="BPost" HorizontalAlignment="Left" Height="21" Margin="221.2,59.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.52,0.524" Grid.Column="5" Grid.Row="1"/>
+                    <Label Content="Choose Column" HorizontalAlignment="Left" Height="26" Margin="110,141,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.654,0.538" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="2"/>
+                    <ComboBox x:Name="BCombo" HorizontalAlignment="Left" Margin="4,145,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="2">
+                        <ComboBoxItem Content="BranchNo" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="StreetNo" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="City" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="State" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="PostCode" HorizontalAlignment="Left" Width="243.2"/>
+                        <ComboBoxItem Content="MgrStaffNo" HorizontalAlignment="Left" Width="243.2"/>
+                    </ComboBox>
+                    <Button x:Name="BShowBtn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="28,104,0,0" VerticalAlignment="Top" Width="75" Click="BShowBtn_Click" Grid.Row="2"/>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="45"/>
                         <RowDefinition Height="95*"/>
