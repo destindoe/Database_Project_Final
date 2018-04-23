@@ -232,21 +232,34 @@
                             <ColumnDefinition Width="67*"/>
                             <ColumnDefinition Width="209*"/>
                         </Grid.ColumnDefinitions>
-                        <DataGrid x:Name="SVDataGrid" HorizontalAlignment="Left" Height="243" Margin="6,26,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="5" Grid.RowSpan="3" Grid.Column="1"/>
+                        <DataGrid x:Name="SVDataGrid" HorizontalAlignment="Left" Height="243" Margin="6,26,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="5" Grid.RowSpan="3" Grid.Column="1" SelectionChanged="SVDataGrid_SelectionChanged">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button x:Name="SVDelete" Content ="Delete" Click="SVDelete_Click" />
+                                                <Button x:Name="SVUpdate" Content="Update" Click="SVUpdate_Click" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                         <TextBox x:Name="SVSearchBox" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="5.2,183,0,0" Grid.ColumnSpan="4" Grid.Row="2" Grid.Column="1"/>
-                        <Button x:Name="SVSearchBtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="113.8,183,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2"/>
+                        <Button x:Name="SVSearchBtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="113.8,183,0,0" Height="19" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="2" Click="SVSearchBtn_Click"/>
                         <Image HorizontalAlignment="Left" Height="125" Margin="29,30,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\clientphoto.jpeg" Grid.Column="5" Grid.RowSpan="3"/>
                         <Label Content="Client #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="159.8,24,0,0" Grid.Column="5" Grid.RowSpan="2"/>
                         <TextBox x:Name="SVClientNum" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Margin="236.8,25,0,0" Grid.Column="5" Grid.RowSpan="2"/>
-                        <Button x:Name="SVAddBtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="330.8,139,0,0" VerticalAlignment="Top" Width="72" Grid.Column="5" Grid.Row="2"/>
+                        <Button x:Name="SVAddBtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="330.8,139,0,0" VerticalAlignment="Top" Width="72" Grid.Column="5" Grid.Row="2" Click="SVAddBtn_Click"/>
                         <TextBox x:Name="SVPropNum" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Margin="406.8,25,0,0" Grid.Column="5" Grid.RowSpan="2"/>
                         <Label Content="Property #:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="323.8,26,0,0" Grid.Column="5" Grid.RowSpan="2"/>
-                        <TextBox x:Name="SVViewDate" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Margin="236.8,10.2,0,0" Grid.Column="5" Grid.Row="1"/>
                         <Label Content="View Date:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="159.8,10.2,0,0" Grid.Column="5" Grid.Row="1"/>
-                        <TextBox x:Name="SVAgentID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Margin="406.8,10.2,0,0" Grid.Column="5" Grid.Row="1"/>
-                        <Label Content="Agent ID:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="323.8,10.2,0,0" Grid.Column="5" Grid.Row="1"/>
+                        <TextBox x:Name="SVAgentID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Margin="425.8,10.2,0,0" Grid.Column="5" Grid.Row="1"/>
+                        <Label Content="Agent ID:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="338.8,8.2,0,0" Grid.Column="5" Grid.Row="1"/>
                         <Label Content="Comments:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="11.947,6.577" Margin="159.8,41.2,0,0" Grid.Column="5" Grid.Row="1"/>
                         <TextBox x:Name="SVComments" HorizontalAlignment="Left" Height="143" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Margin="236.8,40.2,0,0" Grid.Column="5" Grid.Row="1" Grid.RowSpan="2"/>
+                        <DatePicker x:Name="SVViewDate" Grid.Column="5" HorizontalAlignment="Left" Margin="236.8,10.2,0,0" Grid.Row="1" VerticalAlignment="Top"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -263,43 +276,69 @@
                                         <ColumnDefinition Width="81*"/>
                                         <ColumnDefinition Width="779*"/>
                                     </Grid.ColumnDefinitions>
-                                    <DataGrid x:Name="SLDataGrid" HorizontalAlignment="Left" Height="243" Margin="20,11,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="2"/>
+                                    <DataGrid x:Name="SLDataGrid" HorizontalAlignment="Left" Height="243" Margin="20,11,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="2" SelectionChanged="SLDataGrid_SelectionChanged">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Button x:Name="SLDelete" Content ="Delete" Click="SLDelete_Click" />
+                                                            <Button x:Name="SLUpdate" Content="Update" Click="SLUpdate_Click" />
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                     <Image HorizontalAlignment="Left" Height="125" Margin="269.2,15,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\MichaelScott.png" Grid.Column="1"/>
-                                    <Button x:Name="SLAddBtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="574.2,247,0,0" VerticalAlignment="Top" Width="72" Grid.Column="1"/>
+                                    <Button x:Name="SLAddBtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="574.2,247,0,0" VerticalAlignment="Top" Width="72" Grid.Column="1" Click="SLAddBtn_Click"/>
                                     <TextBox x:Name="SLSearchBox" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="20,297,0,0" Grid.ColumnSpan="2"/>
-                                    <Button x:Name="SLSearchBtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="189.2,298,0,0" Height="19" Grid.Column="1"/>
+                                    <Button x:Name="SLSearchBtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="189.2,298,0,0" Height="19" Grid.Column="1" Click="SLSearchBtn_Click"/>
                                     <Label Content="Payment Method:" HorizontalAlignment="Left" Height="29" Margin="564.2,36,0,0" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.762,1.831" Grid.Column="1"/>
                                     <TextBox x:Name="SLPayMethod" HorizontalAlignment="Left" Height="21" Margin="669.2,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"  RenderTransformOrigin="0.481,0.524" Grid.Column="1"/>
                                     <Label Content="Lease #:" HorizontalAlignment="Left" Height="26" Margin="402.2,7,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.654,0.538" Grid.Column="1"/>
-                                    <TextBox x:Name="SLLeaseNum" HorizontalAlignment="Left" Height="21" Margin="479.2,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.52,0.524" Grid.Column="1"/>
+                                    <TextBox x:Name="SLLeaseNo" HorizontalAlignment="Left" Height="21" Margin="479.2,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.52,0.524" Grid.Column="1"/>
                                     <Label Content="Property #:" HorizontalAlignment="Left" Height="24" Margin="574.2,7,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.348,2.083" Grid.Column="1"/>
-                                    <TextBox x:Name="SLPropNum" HorizontalAlignment="Left" Height="20" Margin="644.2,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.1" Grid.Column="1"/>
+                                    <TextBox x:Name="SLPropNo" HorizontalAlignment="Left" Height="20" Margin="644.2,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.1" Grid.Column="1"/>
                                     <Label Content="Deposit Paid:" HorizontalAlignment="Left" Height="25" Margin="401.2,35,0,0" VerticalAlignment="Top" Width="78" Grid.Column="1"/>
                                     <TextBox x:Name="SLDepositPaid" HorizontalAlignment="Left" Height="23" Margin="479.2,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" RenderTransformOrigin="-2.881,-0.043" Grid.Column="1" />
                                     <Label Content="Rent Start:" HorizontalAlignment="Left" Height="25" Margin="402.2,63,0,0" VerticalAlignment="Top" Width="78" Grid.Column="1"/>
                                     <DatePicker x:Name="SLRentStart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="479.2,65,0,0" Width="105" Grid.Column="1"/>
-                                    <Label Content="Rent End:" HorizontalAlignment="Left" Height="25" Margin="591.2,65,0,0" VerticalAlignment="Top" Width="78" Grid.Column="1"/>
-                                    <DatePicker x:Name="SLRentEnd" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="659.2,66,0,0" Width="105" Grid.Column="1"/>
+                                    <Label Content="Rent Finish:" HorizontalAlignment="Left" Height="25" Margin="584.2,65,0,0" VerticalAlignment="Top" Width="78" Grid.Column="1"/>
+                                    <DatePicker x:Name="SLRentFinish" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="659.2,66,0,0" Width="105" Grid.Column="1"/>
                                     <Label Content="ClientNo:" HorizontalAlignment="Left" Height="25" Margin="402.2,93,0,0" VerticalAlignment="Top" Width="78" Grid.Column="1"/>
-                                    <TextBox x:Name="SLClientNum" HorizontalAlignment="Left" Height="21" Margin="479.2,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.52,0.524" Grid.Column="1"/>
+                                    <TextBox x:Name="SLClientNo" HorizontalAlignment="Left" Height="21" Margin="479.2,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.52,0.524" Grid.Column="1"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Mortgage" Margin="14,0,-18.2,-1.8">
                                 <Grid Background="#FFE5E5E5" Margin="-9,-3,-7.8,-0.6">
-                                    <DataGrid x:Name="SMDataGrid" HorizontalAlignment="Left" Height="243" Margin="28,11,0,0" VerticalAlignment="Top" Width="325"/>
+                                    <DataGrid x:Name="SMDataGrid" HorizontalAlignment="Left" Height="243" Margin="28,11,0,0" VerticalAlignment="Top" Width="325" SelectionChanged="SMDataGrid_SelectionChanged">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Button x:Name="SMDelete" Content ="Delete" Click="SMDelete_Click" />
+                                                            <Button x:Name="SMUpdate" Content="Update" Click="SMUpdate_Click" />
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                     <Image HorizontalAlignment="Left" Height="125" Margin="358,15,0,0" VerticalAlignment="Top" Width="116" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\MichaelScott.png"/>
                                     <TextBox x:Name="SMSearchBox" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Margin="28,297,0,0"/>
-                                    <Button x:Name="SMSearchBtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="278,298,0,0" Height="19"/>
-                                    <Button x:Name="SMAddBtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="655,247,0,0" VerticalAlignment="Top" Width="72"/>
+                                    <Button x:Name="SMSearchBtn" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="278,298,0,0" Height="19" Click="SMSearchBtn_Click"/>
+                                    <Button x:Name="SMAddBtn" Content="Add" HorizontalAlignment="Left" Height="41" Margin="655,247,0,0" VerticalAlignment="Top" Width="72" Click="SMAddBtn_Click"/>
                                     <Label Content="FirstName:" HorizontalAlignment="Left" Height="24" Margin="483,7,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.348,2.083"/>
                                     <TextBox x:Name="SMLastName" HorizontalAlignment="Left" Height="20" Margin="558,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" RenderTransformOrigin="0.5,0.1"/>
                                     <Label Content="Property #:" HorizontalAlignment="Left" Height="24" Margin="483,82,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.348,2.083"/>
                                     <TextBox x:Name="SMFirstName" HorizontalAlignment="Left" Height="20" Margin="558,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" RenderTransformOrigin="0.5,0.1"/>
                                     <TextBox x:Name="SMInterest" HorizontalAlignment="Left" Height="20" Margin="558,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.5,0.1"/>
                                     <Label Content="LastName:" HorizontalAlignment="Left" Height="24" Margin="483,33,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.348,2.083"/>
-                                    <TextBox x:Name="SMPrinciple" HorizontalAlignment="Left" Height="20" Margin="730,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.5,0.1"/>
-                                    <TextBox x:Name="SMPropNum" HorizontalAlignment="Left" Height="20" Margin="558,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.5,0.1"/>
-                                    <Label Content="Principle:" HorizontalAlignment="Left" Height="24" Margin="655,61,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.348,2.083"/>
+                                    <TextBox x:Name="SMPrincipal" HorizontalAlignment="Left" Height="20" Margin="730,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.5,0.1"/>
+                                    <TextBox x:Name="SMPropNo" HorizontalAlignment="Left" Height="20" Margin="558,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.5,0.1"/>
+                                    <Label Content="Principal:" HorizontalAlignment="Left" Height="24" Margin="655,61,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.348,2.083"/>
                                     <Label Content="Interest:" HorizontalAlignment="Left" Height="24" Margin="483,58,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.348,2.083"/>
                                 </Grid>
                             </TabItem>
