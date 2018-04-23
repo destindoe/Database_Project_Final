@@ -31,9 +31,8 @@
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <DataTemplate>
                                                         <StackPanel Orientation="Horizontal">
-                                                            <TextBlock Text="{Binding }"/>
                                                             <Button x:Name="StaffDelete" Content ="Delete" Click="StaffDelete_Click" />
-                                                            <Button x:Name="StaffUpdate" Content="Update" />
+                                                            <Button x:Name="StaffUpdate" Content="Update" Click="StaffUpdate_Click" />
                                                         </StackPanel>
                                                     </DataTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>

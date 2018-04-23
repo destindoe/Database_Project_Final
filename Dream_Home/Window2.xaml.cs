@@ -36,6 +36,91 @@ namespace Dream_Home
           
         }
 
+       
+        //Refresh/Display Staff Table
+        private void DisplayStaff()
+        {
+            var command2 = new SqlCommand("Select * From Staff", connection);
+
+            SqlDataAdapter da2 = new SqlDataAdapter(command2);
+            DataTable dt2 = new DataTable();
+            da2.Fill(dt2);
+            StaffDataGrid.ItemsSource = dt2.DefaultView;
+        }
+
+        private void StaffUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid gd = StaffDataGrid;
+            DataRowView row_selected = gd.SelectedItem as DataRowView;
+       
+            MessageBoxResult dr = MessageBox.Show("Would you like to update?", "UPDATE", MessageBoxButton.YesNoCancel);
+
+            if (StaffNo.Text != "" && dr == MessageBoxResult.Yes )
+            {
+                var command = new SqlCommand("Update Staff SET FirstName=@name,LastName=@lname,Position=@pos,DateOfBirth=@dob,Salary=@sal,Sex=@sex,BranchNo=@branchno WHERE StaffNo = @staffno", connection);
+                command.Parameters.AddWithValue("@name", StaffName.Text);
+                command.Parameters.AddWithValue("@staffno", row_selected["StaffNo"].ToString());
+                command.Parameters.AddWithValue("@lname", StaffLName.Text);
+                command.Parameters.AddWithValue("@pos", StaffPosition.Text);
+                command.Parameters.AddWithValue("@dob", StaffDOB.Text);
+                command.Parameters.AddWithValue("@sal", StaffSalary.Text);
+                command.Parameters.AddWithValue("@sex", StaffSex.Text);
+                command.Parameters.AddWithValue("@branchno", StaffBranch.Text);
+                command.ExecuteNonQuery();
+
+                DisplayStaff();
+            }
+        }
+
+        private void StaffSearchbtn_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayStaff();
+        }
+
+        private void Staffaddbtn_Click(object sender, RoutedEventArgs e)
+        {
+            var command = new SqlCommand("INSERT INTO STAFF(StaffNo,FirstName,LastName,Position,Sex,DateOfBirth,Salary,BranchNo) VALUES (@staffno,@name,@lname,@pos,@sex,@dob,@sal,@branchno)", connection);
+
+
+            MessageBoxResult dr = MessageBox.Show("Would you like to add?", "UPDATE", MessageBoxButton.YesNoCancel);
+
+            if (dr == MessageBoxResult.Yes)
+            {
+                command.Parameters.AddWithValue("@staffno", StaffNo.Text);
+                command.Parameters.AddWithValue("@name", StaffName.Text);
+                command.Parameters.AddWithValue("@lname", StaffLName.Text);
+                command.Parameters.AddWithValue("@pos", StaffPosition.Text);
+                command.Parameters.AddWithValue("@dob", StaffDOB.Text);
+                command.Parameters.AddWithValue("@sal", StaffSalary.Text);
+                command.Parameters.AddWithValue("@sex", StaffSex.Text);
+                command.Parameters.AddWithValue("@branchno", StaffBranch.Text);
+                command.ExecuteNonQuery();
+
+                DisplayStaff();
+            }
+
+
+        }
+
+        private void StaffDelete_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid gd = StaffDataGrid;
+            DataRowView row_selected = gd.SelectedItem as DataRowView;
+
+            MessageBoxResult dr = MessageBox.Show("Would you like to delete?", "UPDATE", MessageBoxButton.YesNoCancel);
+
+            if (row_selected != null && dr == MessageBoxResult.Yes)
+            {
+                var command = new SqlCommand("DELETE FROM STAFF WHERE StaffNo = @staffno", connection);
+                command.Parameters.AddWithValue("@staffno",row_selected["StaffNo"].ToString());
+                command.ExecuteNonQuery();
+
+                DisplayStaff();
+            }
+
+
+        }
+
         private void StaffDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataGrid gd = (DataGrid)sender;
@@ -44,7 +129,6 @@ namespace Dream_Home
             if (row_selected != null)
             {
                 StaffBranch.Text = row_selected["BranchNo"].ToString();
-               
                 StaffDOB.SelectedDate = DateTime.Parse(row_selected["DateOfBirth"].ToString()); 
                 StaffName.Text = row_selected["FirstName"].ToString();
                 StaffLName.Text = row_selected["LastName"].ToString();
@@ -57,57 +141,20 @@ namespace Dream_Home
             }
         }
 
-        private void StaffSearchbtn_Click(object sender, RoutedEventArgs e)
+        private void DisplayBranch()
         {
-            var command = new SqlCommand("Select * From Staff", connection);
+            var command = new SqlCommand("Select * From Branch", connection);
 
             SqlDataAdapter da = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            StaffDataGrid.ItemsSource = dt.DefaultView;
+            BDataGrid.ItemsSource = dt.DefaultView;
         }
 
-        private void Staffaddbtn_Click(object sender, RoutedEventArgs e)
+        private void BranchSearchbtn_Click(object sender, RoutedEventArgs e)
         {
-            var command = new SqlCommand("Select * From Staff", connection);
-
-            SqlDataAdapter da = new SqlDataAdapter(command);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            var newRow = dt.NewRow();
-            newRow["FirstName"] = StaffName.Text;
-            newRow["LastName"] = StaffLName.Text;
-            newRow["Position"] = StaffPosition.Text;
-            newRow["Sex"] = StaffSex.Text;
-            newRow["DateOfBirth"] = StaffDOB.SelectedDate;
-            newRow["Salary"] = decimal.Parse(StaffSalary.Text);
-            newRow["BranchNo"] = StaffBranch.Text;
-            newRow["StaffNo"] = StaffNo.Text;
-            dt.Rows.Add(newRow);
-
-            new SqlCommandBuilder(da);
-            da.Update(dt);
-            StaffDataGrid.ItemsSource = dt.DefaultView;
-        }
-
-        private void StaffDelete_Click(object sender, RoutedEventArgs e)
-        {
-            DataGrid gd = StaffDataGrid;
-            DataRowView row_selected = gd.SelectedItem as DataRowView;
-
-            if (row_selected != null)
-            {
-                var command = new SqlCommand("DELETE FROM STAFF WHERE StaffNo = " + row_selected["StaffNo"].ToString(), connection);
-                SqlDataAdapter da = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-
-
-            }
-
+            DisplayBranch();
         }
 
         private void BAddbtn_Click(object sender, RoutedEventArgs e)
@@ -132,16 +179,6 @@ namespace Dream_Home
 
         }
 
-        private void BranchSearchbtn_Click(object sender, RoutedEventArgs e)
-        {
-            var command = new SqlCommand("Select * From Branch", connection);
-
-            SqlDataAdapter da = new SqlDataAdapter(command);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            BDataGrid.ItemsSource = dt.DefaultView;
-        }
 
         private void BDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -158,6 +195,5 @@ namespace Dream_Home
             }
         }
 
-       
     }
 }
