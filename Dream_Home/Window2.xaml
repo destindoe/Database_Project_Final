@@ -17,7 +17,7 @@
                     <Grid Background="#FFE5E5E5" Height="358" Margin="0,0,52.8,0" RenderTransformOrigin="0.558,0.468">
                         <TabControl Height="358" VerticalAlignment="Top" Margin="-9,0,0.2,0">
                             <TabItem Header="Staff" Margin="10,0,-14,-2">
-                                <Grid Background="#FFE5E5E5" Margin="0,-4,-4.6,-14.6">
+                                <Grid x:Name="StaffGrid" Background="#FFE5E5E5" Margin="0,-4,-4.6,-14.6">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="59*"/>
                                         <ColumnDefinition Width="9*"/>
@@ -70,10 +70,11 @@
                                         <ComboBoxItem Content="BranchNo" HorizontalAlignment="Left" Width="243.2"/>
                                     </ComboBox>
                                     <Button x:Name="SShowBtn" Content="Show" Grid.Column="4" HorizontalAlignment="Left" Margin="261,226,0,0" VerticalAlignment="Top" Width="75" Click="SShowBtn_Click"/>
+                                    <Button x:Name="ClearBtn" Content="Clear" Grid.Column="4" HorizontalAlignment="Left" Height="41" Margin="640,247,0,0" VerticalAlignment="Top" Width="72" Click="ClearBtn_Click"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Agents" Margin="0,0,-18,-2" HorizontalAlignment="Right" Width="53">
-                                <Grid Background="#FFE5E5E5" Margin="-9,-3,-7.8,-0.6">
+                                <Grid x:Name="AgentGrid" Background="#FFE5E5E5" Margin="-9,-3,-7.8,-0.6">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="22*"/>
                                         <ColumnDefinition Width="13*"/>
@@ -125,6 +126,7 @@
                                         <ComboBoxItem Content="StaffNo" HorizontalAlignment="Left" Width="243.2"/>
                                     </ComboBox>
                                     <Button x:Name="AShow_Btn" Content="Show" Grid.Column="6" HorizontalAlignment="Left" Margin="279,226,0,0" VerticalAlignment="Top" Width="75" Click="AShowBtn_Click"/>
+                                    <Button x:Name="AgentClearBtn" Content="Clear" Grid.Column="6" HorizontalAlignment="Left" Height="41" Margin="649,247,0,0" VerticalAlignment="Top" Width="72" Click="ClearBtn_Click"/>
                                 </Grid>
                             </TabItem>
                         </TabControl>
@@ -135,7 +137,7 @@
                 <TabItem.Header>
                     <Image Width="50" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\client.png" Height="45"/>
                 </TabItem.Header>
-                <Grid Background="#FFE5E5E5" Margin="-4,0,2.4,0" Height="362" VerticalAlignment="Top">
+                <Grid x:Name="ClientGrid" Background="#FFE5E5E5" Margin="-4,0,2.4,0" Height="362" VerticalAlignment="Top">
                     <DataGrid x:Name="ClientDataGrid" HorizontalAlignment="Left" Height="243" Margin="2,26,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="5" Grid.RowSpan="3" Grid.Column="1" SelectionChanged="ClientDataGrid_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
@@ -172,6 +174,7 @@
                         <ComboBoxItem Content="MaxRent" HorizontalAlignment="Left" Width="243.2"/>
                     </ComboBox>
                     <Button x:Name="CShow_Btn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="27,102,0,0" VerticalAlignment="Top" Width="75" Click="CShowBtn_Click" Grid.Row="2"/>
+                    <Button x:Name="ClientClearBtn" Content="Clear" Grid.Column="5" HorizontalAlignment="Left" Height="41" Margin="411,107,0,0" VerticalAlignment="Top" Width="72" Click="ClientClearBtn_Click" Grid.Row="2"/>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="45"/>
                         <RowDefinition Height="95*"/>
@@ -191,11 +194,11 @@
                 <TabItem.Header>
                     <Image Width="50" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\owner.png" Height="45"/>
                 </TabItem.Header>
-                <Grid Background="#FFE5E5E5" Margin="-4,0,0.4,0" Height="362" VerticalAlignment="Top" Grid.ColumnSpan="6" Grid.RowSpan="2">
+                <Grid x:Name="OwnerGrid" Background="#FFE5E5E5" Margin="-4,0,0.4,0" Height="362" VerticalAlignment="Top" Grid.ColumnSpan="6" Grid.RowSpan="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="45"/>
-                        <RowDefinition Height="71*"/>
-                        <RowDefinition Height="246*"/>
+                        <RowDefinition Height="71"/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*"/>
@@ -244,6 +247,7 @@
                         <ComboBoxItem Content="Address" HorizontalAlignment="Left" Width="243.2"/>
                     </ComboBox>
                     <Button x:Name="OShowBtn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="24.6,134,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="OShowBtn_Click"/>
+                    <Button x:Name="OwnerClearBtn" Content="Clear" Grid.Column="5" HorizontalAlignment="Left" Height="41" Margin="410,131,0,0" VerticalAlignment="Top" Width="72" Click="OwnerClearBtn_Click" Grid.Row="2"/>
                 </Grid>
             </TabItem>
             <TabItem  Margin="-2,-2,-2,2">
@@ -263,11 +267,11 @@
                         <ColumnDefinition Width="67*"/>
                         <ColumnDefinition Width="209*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Background="#FFE5E5E5" Margin="0,0,8.4,0" Height="362" VerticalAlignment="Top" Grid.ColumnSpan="6" Grid.RowSpan="2">
+                    <Grid x:Name="SaleGrid" Background="#FFE5E5E5" Margin="0,0,8.4,0" Height="362" VerticalAlignment="Top" Grid.ColumnSpan="6" Grid.RowSpan="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="45"/>
-                            <RowDefinition Height="71*"/>
-                            <RowDefinition Height="246*"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="246"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="5*"/>
@@ -331,6 +335,7 @@
                             <ComboBoxItem Content="ListingAgentID" HorizontalAlignment="Left" Width="243.2"/>
                         </ComboBox>
                         <Button x:Name="SaleShowBtn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="27.6,134,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="SaleShowBtn_Click"/>
+                        <Button x:Name="FSClearBtn" Content="Clear" Grid.Column="5" HorizontalAlignment="Left" Height="41" Margin="418,155,0,0" VerticalAlignment="Top" Width="72" Click="FSClearBtn_Click" Grid.Row="2"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -351,7 +356,7 @@
                         <ColumnDefinition Width="67*"/>
                         <ColumnDefinition Width="209*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Background="#FFE5E5E5" Margin="0,0,8.4,0" Height="362" VerticalAlignment="Top" Grid.ColumnSpan="6" Grid.RowSpan="2">
+                    <Grid x:Name="RGrid" Background="#FFE5E5E5" Margin="0,0,8.4,0" Height="362" VerticalAlignment="Top" Grid.ColumnSpan="6" Grid.RowSpan="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="45"/>
                             <RowDefinition Height="71*"/>
@@ -413,6 +418,7 @@
                             <ComboBoxItem Content="Rent" HorizontalAlignment="Left" Width="243.2"/>
                         </ComboBox>
                         <Button x:Name="RShowBtn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="27.6,134,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="RShowBtn_Click"/>
+                        <Button x:Name="FRClearBtn" Content="Clear" Grid.Column="5" HorizontalAlignment="Left" Height="41" Margin="417,139,0,0" VerticalAlignment="Top" Width="72" Click="FRClearBtn_Click" Grid.Row="2"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -449,7 +455,7 @@
                         </Grid.ColumnDefinitions>
                         <TabControl Grid.ColumnSpan="6" Grid.RowSpan="3" Margin="0,-2,-0.4,-8.2" RenderTransformOrigin="0.5,0.529" HorizontalAlignment="Left" Width="858" Height="379" VerticalAlignment="Bottom">
                             <TabItem Header="Newspaper" Margin="10,0,-9.8,0" RenderTransformOrigin="0.701,0.364" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75">
-                                <Grid Background="#FFE5E5E5" Margin="0,-3,-5,0" HorizontalAlignment="Right" Width="857" Height="328" VerticalAlignment="Top">
+                                <Grid x:Name="NewsGrid" Background="#FFE5E5E5" Margin="0,-3,-5,0" HorizontalAlignment="Right" Width="857" Height="328" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="39*"/>
                                         <ColumnDefinition Width="78*"/>
@@ -492,10 +498,11 @@
                                         <ComboBoxItem Content="PropertyNo" HorizontalAlignment="Left" Width="243.2"/>
                                     </ComboBox>
                                     <Button x:Name="NewsShowBtn" Content="Show" Grid.Column="3" HorizontalAlignment="Left" Margin="227,226,0,0" VerticalAlignment="Top" Width="75" Click="NewsShowBtn_Click"/>
+                                    <Button x:Name="NewsClearBtn" Content="Clear" Grid.Column="3" HorizontalAlignment="Left" Height="43" Margin="614,226,0,0" VerticalAlignment="Top" Width="72" Click="NewsClearBtn_Click"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="TV" RenderTransformOrigin="2.049,0.651" HorizontalAlignment="Left" Margin="7.4,0,-7.6,0" Width="57" Height="24" VerticalAlignment="Bottom">
-                                <Grid Background="#FFE5E5E5" Margin="0,-3,-3,3" HorizontalAlignment="Left" Width="855">
+                                <Grid x:Name="TVGrid" Background="#FFE5E5E5" Margin="0,-3,-3,3" HorizontalAlignment="Left" Width="855">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="33*"/>
                                         <ColumnDefinition Width="142*"/>
@@ -537,10 +544,11 @@
                                         <ComboBoxItem Content="PropertyNo" HorizontalAlignment="Left" Width="243.2"/>
                                     </ComboBox>
                                     <Button x:Name="TVShowBtn" Content="Show" Grid.Column="2" HorizontalAlignment="Left" Margin="179,226,0,0" VerticalAlignment="Top" Width="75" Click="TVShowBtn_Click"/>
+                                    <Button x:Name="TVClearBtn" Content="Clear" Grid.Column="2" HorizontalAlignment="Left" Height="41" Margin="571,212,0,0" VerticalAlignment="Top" Width="74" Click="TVClearBtn_Click"/>
                                 </Grid>
                             </TabItem>
                             <TabItem Header="Internet" RenderTransformOrigin="2.049,0.651" HorizontalAlignment="Left" Margin="7.4,0,-7.6,0" Width="57" Height="24" VerticalAlignment="Bottom">
-                                <Grid Background="#FFE5E5E5" Margin="0,-3,-25,3" HorizontalAlignment="Left" Width="877">
+                                <Grid x:Name="InternetGrid" Background="#FFE5E5E5" Margin="0,-3,-25,3" HorizontalAlignment="Left" Width="877">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="34*"/>
                                         <ColumnDefinition Width="68*"/>
@@ -582,6 +590,7 @@
                                         <ComboBoxItem Content="PropertyNo" HorizontalAlignment="Left" Width="243.2"/>
                                     </ComboBox>
                                     <Button x:Name="IShowBtn" Content="Show" Grid.Column="2" HorizontalAlignment="Left" Margin="252,226,0,0" VerticalAlignment="Top" Width="75" Click="IShowBtn_Click"/>
+                                    <Button x:Name="InternetClearBtn" Content="Clear" Grid.Column="2" HorizontalAlignment="Left" Height="41" Margin="644,212,0,0" VerticalAlignment="Top" Width="74" Click="InternetClearBtn_Click"/>
                                 </Grid>
                             </TabItem>
                         </TabControl>
@@ -592,7 +601,7 @@
                 <TabItem.Header>
                     <Image Width="50" Source="C:\Users\jones\source\repos\Database_Project_Final\Dream_Home\Images\branch.png" Height="45"/>
                 </TabItem.Header>
-                <Grid Background="#FFE5E5E5" Margin="-4,0,2.4,0" Height="362" VerticalAlignment="Top">
+                <Grid x:Name="BGrid" Background="#FFE5E5E5" Margin="-4,0,2.4,0" Height="362" VerticalAlignment="Top">
                     <DataGrid x:Name="BDataGrid" HorizontalAlignment="Left" Height="243" Margin="2,26,0,0" VerticalAlignment="Top" Width="325" Grid.ColumnSpan="5" Grid.RowSpan="3" Grid.Column="1" AutomationProperties.Name="DDataGrid" SelectionChanged="BDataGrid_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
@@ -632,6 +641,7 @@
                         <ComboBoxItem Content="MgrStaffNo" HorizontalAlignment="Left" Width="243.2"/>
                     </ComboBox>
                     <Button x:Name="BShowBtn" Content="Show" Grid.Column="5" HorizontalAlignment="Left" Margin="28,104,0,0" VerticalAlignment="Top" Width="75" Click="BShowBtn_Click" Grid.Row="2"/>
+                    <Button x:Name="BranchClearBtn" Content="Clear" Grid.Column="5" HorizontalAlignment="Left" Height="41" Margin="416,88,0,0" VerticalAlignment="Top" Width="74" Click="BranchClearBtn_Click" Grid.Row="2"/>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="45"/>
                         <RowDefinition Height="95*"/>

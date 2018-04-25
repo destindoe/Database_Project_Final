@@ -23,7 +23,7 @@ namespace Dream_Home
     public partial class Window2 : Window
     {
         //Grab connection
-        SqlConnection connection = ConnectionManager.Open(ConnectionStrings.Jonathan);
+        SqlConnection connection = ConnectionManager.Open(ConnectionStrings.Destin);
         public Window2()
         {
             InitializeComponent();
@@ -33,10 +33,10 @@ namespace Dream_Home
         {
             new Login().Show();
             this.Close();
-          
+
         }
 
-       
+
         //Refresh/Display Staff Table
         private void DisplayStaff()
         {
@@ -73,10 +73,10 @@ namespace Dream_Home
         {
             DataGrid gd = StaffDataGrid;
             DataRowView row_selected = gd.SelectedItem as DataRowView;
-       
+
             MessageBoxResult dr = MessageBox.Show("Would you like to update?", "UPDATE", MessageBoxButton.YesNoCancel);
 
-            if (StaffNo.Text != "" && dr == MessageBoxResult.Yes )
+            if (StaffNo.Text != "" && dr == MessageBoxResult.Yes)
             {
                 var command = new SqlCommand("Update Staff SET FirstName=@name,LastName=@lname,Position=@pos,DateOfBirth=@dob,Salary=@sal,Sex=@sex,BranchNo=@branchno WHERE StaffNo = @staffno", connection);
                 command.Parameters.AddWithValue("@name", StaffName.Text);
@@ -128,7 +128,7 @@ namespace Dream_Home
             if (row_selected != null && dr == MessageBoxResult.Yes)
             {
                 var command = new SqlCommand("DELETE FROM STAFF WHERE StaffNo = @staffno", connection);
-                command.Parameters.AddWithValue("@staffno",row_selected["StaffNo"].ToString());
+                command.Parameters.AddWithValue("@staffno", row_selected["StaffNo"].ToString());
                 command.ExecuteNonQuery();
 
                 DisplayStaff();
@@ -145,7 +145,7 @@ namespace Dream_Home
             if (row_selected != null)
             {
                 StaffBranch.Text = row_selected["BranchNo"].ToString();
-                StaffDOB.SelectedDate = DateTime.Parse(row_selected["DateOfBirth"].ToString()); 
+                StaffDOB.SelectedDate = DateTime.Parse(row_selected["DateOfBirth"].ToString());
                 StaffName.Text = row_selected["FirstName"].ToString();
                 StaffLName.Text = row_selected["LastName"].ToString();
                 StaffPosition.Text = row_selected["Position"].ToString();
@@ -195,7 +195,7 @@ namespace Dream_Home
 
         private void AgentSearchbtn_Click(object sender, RoutedEventArgs e)
         {
-            if(AgentSearch.Text != "")
+            if (AgentSearch.Text != "")
             {
                 var command2 = new SqlCommand("Select * From Agents Where " + ACombo.Text + " = '" + AgentSearch.Text + "'", connection);
                 SqlDataAdapter da2 = new SqlDataAdapter(command2);
@@ -299,7 +299,7 @@ namespace Dream_Home
                 ClientLName.Text = row_selected["LastName"].ToString();
                 ClientPhone.Text = row_selected["TelNo"].ToString();
                 ClientMaxRent.Text = row_selected["MaxRent"].ToString();
-               
+
             }
         }
 
@@ -427,6 +427,12 @@ namespace Dream_Home
             }
         }
 
+        //view property
+        private void ViewPropertyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new Window4().Show();
+        }
+
         private void OwnerAddbtn_Click(object sender, RoutedEventArgs e)
         {
             var command = new SqlCommand("INSERT INTO Owner(BranchNo,OwnerNo,FName,LName,Address,TeloNo) VALUES (@branchno,@ownerno,@fname,@lname,@address,@phone)", connection);
@@ -436,7 +442,7 @@ namespace Dream_Home
 
             if (dr == MessageBoxResult.Yes)
             {
-  
+
                 command.Parameters.AddWithValue("@branchno", OwnerBranch.Text);
                 command.Parameters.AddWithValue("@ownerno", OwnerNo.Text);
                 command.Parameters.AddWithValue("@fname", OwnerName.Text);
@@ -491,8 +497,8 @@ namespace Dream_Home
 
 
         //Properties for Sale Tab Started
-        
-            //Display for Sale table
+
+        //Display for Sale table
         private void DisplayPFS()
         {
             var command2 = new SqlCommand("Select * From PropertyForSale", connection);
@@ -630,8 +636,8 @@ namespace Dream_Home
 
         //For Rent Properties tab started
 
-            //Update for Rent table
-            private void DisplayPFR()
+        //Update for Rent table
+        private void DisplayPFR()
         {
             var command2 = new SqlCommand("Select * From PropertyForRent", connection);
 
@@ -645,7 +651,7 @@ namespace Dream_Home
         {
             DisplayPFR();
         }
-    
+
 
         //Display to textboxes
         private void ForRentDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -762,8 +768,8 @@ namespace Dream_Home
 
         //Advertisement Tab Started
 
-            //Newspaper tab started
-            
+        //Newspaper tab started
+
         private void DisplayNewspaper()
         {
             var command2 = new SqlCommand("Select * From Newspaper", connection);
@@ -828,7 +834,7 @@ namespace Dream_Home
                 command.Parameters.AddWithValue("@phone", NPhone.Text);
                 command.Parameters.AddWithValue("@adid", NAdID.Text);
                 command.Parameters.AddWithValue("@propertyno", NProperty.Text);
-            
+
                 command.ExecuteNonQuery();
 
                 DisplayNewspaper();
@@ -1000,7 +1006,7 @@ namespace Dream_Home
 
         //End of TV tab
 
-            //Start of Internet Tab
+        //Start of Internet Tab
 
         //Display Internet ads
         private void DisplayInternet()
@@ -1117,7 +1123,7 @@ namespace Dream_Home
 
         //End of Internet Tab
 
-       //End of Advertisement Tab
+        //End of Advertisement Tab
 
         //Branch Methods
 
@@ -1181,14 +1187,14 @@ namespace Dream_Home
                 command.Parameters.AddWithValue("@staffno", BManager.Text);
                 command.Parameters.AddWithValue("@streetno", BStreet.Text);
                 command.Parameters.AddWithValue("@city", BCity.Text);
-                command.Parameters.AddWithValue("@post",BPost.Text);
+                command.Parameters.AddWithValue("@post", BPost.Text);
                 command.Parameters.AddWithValue("@state", BState.Text);
                 command.Parameters.AddWithValue("@branchno", BBranch.Text);
                 command.ExecuteNonQuery();
 
                 DisplayBranch();
             }
-    
+
 
         }
 
@@ -1214,7 +1220,7 @@ namespace Dream_Home
             }
         }
 
-        
+
 
         private void BranchDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -1233,6 +1239,68 @@ namespace Dream_Home
             }
         }
 
-    
+        private void ClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(StaffGrid);
+        }
+
+        private void NewsClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(NewsGrid);
+        }
+
+        private void AgentClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(AgentGrid);
+        }
+
+        private void ClientClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(ClientGrid);
+        }
+
+        private void OwnerClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(OwnerGrid);
+        }
+
+        private void FSClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(SaleGrid);
+        }
+
+        private void FRClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(RGrid);
+        }
+
+        private void TVClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(TVGrid);
+        }
+
+        private void InternetClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(InternetGrid);
+        }
+
+        private void BranchClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(BGrid);
+        }
+
+        private void ClearTextBoxes(Grid g)
+        {
+            foreach (Control ctl in g.Children)
+            {
+                if (ctl.GetType() == typeof(CheckBox))
+                    ((CheckBox)ctl).IsChecked = false;
+                if (ctl.GetType() == typeof(TextBox))
+                    ((TextBox)ctl).Text = String.Empty;
+            }
+
+        }
+
+     
     }
 }

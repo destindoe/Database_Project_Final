@@ -868,6 +868,53 @@ namespace Dream_Home
                 DisplayMortgage();
             }
         }
+
         //MORTGAGE TAB END
+
+        private void ClearTextBoxes(Grid g)
+        {
+            foreach (Control ctl in g.Children)
+            {
+               
+                if (ctl.GetType() == typeof(TextBox))
+                    ((TextBox)ctl).Text = String.Empty;
+            }
+
+        }
+
+        private void SClientClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(SClientGrid);
+        }
+
+        private void SOwnerClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(SOwnerGrid);
+        }
+
+        private void SFSClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(SFSGrid);
+        }
+
+        private void SFRClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(SFRGrid);
+        }
+
+        private void ViewClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(ViewingGrid);
+        }
+
+        private void LeaseClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(LeaseGrid);
+        }
+
+        private void MortgageCleearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes(MortgageGrid);
+        }
     }
 }
