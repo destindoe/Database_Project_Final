@@ -427,11 +427,7 @@ namespace Dream_Home
             }
         }
 
-        //view property
-        private void ViewPropertyBtn_Click(object sender, RoutedEventArgs e)
-        {
-            new Window4().Show();
-        }
+      
 
         private void OwnerAddbtn_Click(object sender, RoutedEventArgs e)
         {
